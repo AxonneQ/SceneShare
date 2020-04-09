@@ -1,0 +1,74 @@
+$pink: #db0066;
+$red: #ff0000;
+$white: #ffffff;
+$twitch: #9147ff;
+$vdarkgray: #181818;
+$darkgray: #1f1f1f;
+$gray: #404044;
+$lightgray: #e8e8e8;
+
+$width: 24px;
+$height: 24px;
+$font-size: 14px;
+$icon-size: 16px;
+$indent-size: 10px;
+
+:host {
+	#navbar {
+		width: -webkit-fill-available;
+		height: $height;
+		background-color: $vdarkgray;
+		color: $twitch;
+		font-size: 14px;
+		display: flex;
+		position: relative;
+		align-items: center;
+		padding-left: $indent-size;
+		-webkit-app-region: drag;
+		border-bottom: 1px solid $twitch;
+
+		.window-controls {
+			margin-left: auto;
+			width: fit-content;
+			height: $height;
+			display: flex;
+
+			mat-icon {
+				color: $white;
+				width: $width;
+				height: $height;
+				font-size: $icon-size;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				user-select: none;
+				transition: all 0.1s ease-out;
+				-webkit-app-region: no-drag;
+				cursor: pointer;
+
+				&.minimize {
+					font-size: medium;
+				}
+
+				&.maximize,
+				&.unmaximize {
+					font-size: medium;
+				}
+
+				&:hover {
+					transition: all 0.1s ease-in;
+				}
+
+				&.close:hover {
+					background-color: $red;
+				}
+
+				&.minimize:hover,
+				&.maximize:hover,
+				&.unmaximize:hover {
+					background-color: $twitch;
+				}
+			}
+		}
+	}
+}

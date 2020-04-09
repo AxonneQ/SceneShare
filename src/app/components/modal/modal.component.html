@@ -1,0 +1,7 @@
+<div class="modal">
+	<div class="title" *ngIf="modal.title">{{ modal.title }}</div>
+	<div class="message" *ngIf="modal.message">{{ modal.message }}</div>
+	<div class="buttons-wrapper">
+		<button *ngFor="let button of modal.buttons" (click)="buttonAction(button.action)">{{ button.text }}</button>
+	</div>
+</div>

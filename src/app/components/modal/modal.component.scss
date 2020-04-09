@@ -1,0 +1,69 @@
+$modal-background: #00000000;
+$modal-color: #444444cc;
+$twitch: #9147ff;
+$twitch-disabled: #7a63a0;
+$disabled-text: #c4c4c4;
+$lightgray: #e8e8e8;
+
+:host {
+	height: 100%;
+	width: 100%;
+	background-color: $modal-background;
+	position: absolute;
+	top: 0;
+	left: 0;
+	backdrop-filter: blur(10px);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	.modal {
+		width: 70%;
+		height: fit-content;
+		max-height: 800px;
+		max-width: 700px;
+		background-color: $modal-color;
+		border: 1px solid $twitch;
+		border-radius: 3px;
+		padding: 20px;
+		position: relative;
+
+		.title {
+			position: absolute;
+			top: 5px;
+			color: $lightgray;
+			font-size: 12px;
+		}
+
+		.message {
+			margin: 15px 0px 15px 0px;
+			color: $twitch;
+			font-size: 14px;
+			background-color: $lightgray;
+			border-radius: 3px;
+			border: 1px solid $twitch;
+			padding: 5px;
+			overflow: scroll;
+			white-space: pre;
+			height: 100px;
+		}
+
+		.buttons-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+
+			button {
+				width: fit-content;
+				height: 30px;
+				background-color: $twitch;
+				color: #fff;
+				border-style: none;
+				user-select: none;
+				cursor: pointer;
+			}
+		}
+	}
+}

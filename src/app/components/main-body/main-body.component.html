@@ -1,0 +1,21 @@
+<div class="container">
+	<app-path-picker
+		(pathEvent)="getSourcePath($event)"
+		[label]="'Scene Location'"
+		[buttonText]="'Open Folder'"
+		[type]="'folder'"
+		[path_text]="'No path selected'"
+	></app-path-picker>
+	<!-- <app-path-picker
+    (pathEvent)="getTargetPath($event)"
+		[label]="'Target Location'"
+		[buttonText]="'Open Folder'"
+		[type]="'folder'"
+		[path_text]="'No path selected'"
+	></app-path-picker> -->
+	<button *ngIf="sourcePath; else disabled" class="run" (click)="changePaths()">Change Paths</button>
+	<ng-template #disabled>
+		<button class="run-disabled">Change Paths</button>
+	</ng-template>
+</div>
+<app-modal [@flyInOut] [modal]="modal" *ngIf="modal.visible == true"> </app-modal>

@@ -1,0 +1,13 @@
+<div id="navbar">
+	<div>SceneShare</div>
+	<div class="window-controls">
+		<mat-icon class="minimize" (click)="minimize()">remove</mat-icon>
+		<mat-icon *ngIf="!isMaximized; else unMaximize" class="maximize" fontSet="material-icons-sharp" (click)="maximize()"
+			>fullscreen</mat-icon
+		>
+		<ng-template #unMaximize>
+			<mat-icon class="unmaximize" fontSet="material-icons-sharp" (click)="unmaximize()">fullscreen_exit</mat-icon>
+		</ng-template>
+		<mat-icon class="close" (click)="quit()">close</mat-icon>
+	</div>
+</div>

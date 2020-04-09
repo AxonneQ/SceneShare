@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../assets/fonts/fonts.scss";
+
+$darkgray: #222222;
+$twitch: #9147ff;
+$twitch-active: #a976f7;
+
+$scroll-width: 4px;
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $darkgray;
+
+  font-family: "Source Sans Pro";
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  color: $twitch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: $scroll-width;
+  height: $scroll-width;
+  position: fixed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $twitch;
+  border-radius: 5px;
+
+  &:active {
+    background: $twitch-active;
+  }
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+

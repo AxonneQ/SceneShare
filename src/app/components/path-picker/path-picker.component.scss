@@ -1,0 +1,66 @@
+$pink: #db0066;
+$red: #ff0000;
+$white: #ffffff;
+$twitch: #9147ff;
+$twitch-active: #a976f7;
+$udarkgray: #181818;
+$vdarkgray: #2d2d2d;
+$darkgray: #1f1f1f;
+$gray: #404044;
+$lightgray: #e8e8e8;
+
+$font-size-s: 12px;
+$font-size-m: 14px;
+$font-size-l: 16px;
+
+$height: 30px;
+
+$text-indent: 5px;
+$label-indent: 10px;
+$label-spacing: 5px;
+
+$scroll-width: 4px;
+
+:host {
+	.label {
+		color: $lightgray;
+		font-size: 12px;
+		padding-left: $label-indent;
+		padding-bottom: $label-spacing;
+		padding-top: $label-spacing;
+		user-select: none;
+	}
+
+	.picker {
+		min-width: 300px;
+		height: $height;
+		background-color: $lightgray;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+
+		.picker-button {
+			width: 100%;
+			height: $height;
+			background-color: $twitch;
+			color: $white;
+			grid-area: 1 / 1 / span 1 / span 1;
+			border-style: none;
+			user-select: none;
+			cursor: pointer;
+		}
+
+		.path {
+			color: $twitch;
+			padding-left: $text-indent;
+			grid-area: 1 / 2 / span 1 / span 3;
+			margin: auto 0;
+			white-space: nowrap;
+			overflow-x: scroll;
+			display: flex;
+			align-items: center;
+			margin: 0;
+			margin-top: $scroll-width;
+			font-size: $font-size-m;
+		}
+	}
+}
